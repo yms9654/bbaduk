@@ -1,0 +1,148 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#game-container {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0;
+    width: 500px;
+    min-width: 500px;
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(7, 60px);
+    grid-template-rows: repeat(7, 60px);
+    gap: 2px;
+    border: 2px solid #333;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    width: 426px;
+    height: 426px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.player-piece {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.player1 {
+    background-color: red;
+}
+
+.player2 {
+    background-color: blue;
+}
+
+.player3 {
+    background-color: yellow;
+}
+
+#game-info p {
+    margin: 5px 0;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 벽 스타일 (추후 JavaScript로 동적 추가) */
+.wall-top { border-top: 8px solid #333; }
+.wall-bottom { border-bottom: 8px solid #333; }
+.wall-left { border-left: 8px solid #333; }
+.wall-right { border-right: 8px solid #333; }
+
+.wall-top.wall-red { border-top-color: red !important; }
+.wall-bottom.wall-red { border-bottom-color: red !important; }
+.wall-left.wall-red { border-left-color: red !important; }
+.wall-right.wall-red { border-right-color: red !important; }
+
+.wall-top.wall-blue { border-top-color: blue !important; }
+.wall-bottom.wall-blue { border-bottom-color: blue !important; }
+.wall-left.wall-blue { border-left-color: blue !important; }
+.wall-right.wall-blue { border-right-color: blue !important; }
+
+.wall-top.wall-yellow { border-top-color: yellow !important; }
+.wall-bottom.wall-yellow { border-bottom-color: yellow !important; }
+.wall-left.wall-yellow { border-left-color: yellow !important; }
+.wall-right.wall-yellow { border-right-color: yellow !important; }
+
+#message-area {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 20px; /* 메시지가 없을 때도 공간 유지 */
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #212529;
+    font-size: 0.9em;
+}
+
+#message-area.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+#message-area.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+#confirmation-area button {
+    margin: 5px;
+}
+
+.selected-cell {
+    /* border: 2px solid darkgreen !important; */ /* 기존 테두리 방식 주석 처리 */
+    outline: 2px solid darkgreen; /* outline 방식으로 변경 */
+    /* box-shadow: 0 0 3px 2px darkgreen; */ 
+}
+
+#message-area, #confirmation-area {
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    word-break: break-all;
+    overflow-wrap: break-word;
+} 

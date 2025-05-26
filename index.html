@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>벽바둑 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>벽바둑 게임</h1>
+        <div id="game-board"></div>
+        <div id="game-info">
+            <p>현재 플레이어: <span id="current-player"></span></p>
+            <p>남은 시간: <span id="timer">90</span>초</p>
+            <button id="break-wall-button" disabled>벽 부수기 (남은 횟수: 1)</button>
+            <div id="message-area"></div>
+            <div id="confirmation-area"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
